@@ -10,7 +10,8 @@
     "format": "prettier . --list-different",
     "format:write": "prettier . --write",
     "lint": "biome lint .",
-    "lint:fix": "biome lint . --fix"
+    "lint:fix": "biome lint . --fix",
+    "prepare": "lefthook install"
   },
   "dependencies": {
     "@react-router/node": "^7.4.0",
@@ -27,6 +28,7 @@
     "@types/node": "^20",
     "@types/react": "^19.0.1",
     "@types/react-dom": "^19.0.1",
+    "lefthook": "^1.11.3",
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "react-router-devtools": "^1.1.0",
@@ -35,9 +37,13 @@
     "vite": "^5.4.11",
     "vite-tsconfig-paths": "^5.1.4"
   },
+  "engines": {
+    "node": "22"
+  },
   "pnpm": {
     "onlyBuiltDependencies": [
-      "esbuild"
+      "esbuild",
+      "lefthook"
     ]
   }
 }
