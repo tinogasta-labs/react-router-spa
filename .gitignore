@@ -4,3 +4,6 @@
 # React Router
 /.react-router/
 /build/
+
+# Generated icons
+/app/components/ui/icons

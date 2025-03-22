@@ -1,17 +1,18 @@
 import {
   Links,
   Meta,
+  type MetaFunction,
   Outlet,
   Scripts,
   ScrollRestoration,
   isRouteErrorResponse,
 } from 'react-router'
-
 import type { Route } from './+types/root'
+import { spriteHref } from './components/ui/icon'
 import './app.css'
 import { getMetaTags } from './utils/seo'
 
-export function meta() {
+export const meta: MetaFunction = () => {
   return getMetaTags()
 }
 
@@ -26,6 +27,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         {children}
+        <img src={spriteHref} alt="" hidden fetchPriority="high" />
         <ScrollRestoration />
         <Scripts />
       </body>

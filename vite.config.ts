@@ -9,7 +9,14 @@ export default defineConfig({
   },
   build: {
     cssMinify: true,
-    minify: true,
+    assetsInlineLimit: (source: string) => {
+      if (
+        source.endsWith('sprite.svg') ||
+        source.endsWith('apple-touch-icon.png')
+      ) {
+        return false
+      }
+    },
   },
   plugins: [tailwindcss(), reactRouter(), tsconfigPaths()],
 })
