@@ -25,8 +25,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="bg-neutral-50 text-neutral-950">
         {children}
+        <footer className="fixed inset-x-0 bottom-0 px-4 py-12 text-center">
+          <p className="text-sm text-neutral-600">By Tinogasta Labs</p>
+        </footer>
         <img src={spriteHref} alt="" hidden fetchPriority="high" />
         <ScrollRestoration />
         <Scripts />
